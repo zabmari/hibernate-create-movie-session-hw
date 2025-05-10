@@ -66,7 +66,10 @@ public class Main {
         MovieSession getSecondSession = movieSessionService.get(secondMovieSession.getId());
         System.out.println("first session " + firstMovieSession);
         System.out.println("second session " + secondMovieSession);
-        movieSessionService.findAvailableSessions(movie.getId(), LocalDate.of(2025, 5, 5));
-        movieSessionService.findAvailableSessions(secondMovie.getId(), LocalDate.of(2025, 5, 2));
+        movieSessionService.findAvailableSessions(movie.getId(), LocalDate.of(2025, 5, 5))
+                .forEach(System.out::println);
+        movieSessionService.findAvailableSessions(secondMovie.getId(), LocalDate.of(2025, 5, 2))
+                .forEach(System.out::println);
+
     }
 }
